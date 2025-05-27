@@ -1,1 +1,36 @@
-<p>registrarse works!</p>
+<div class="contenedor-registro">
+        <h2 class="titulo-registro">Registrase</h2>
+        <form [formGroup]="registro" (ngSubmit)="Registrar()">
+            <mat-form-field class="example-full-width bloque">
+                <mat-label>Nombre</mat-label>
+                <input type="text" formControlName="nombre" matInput placeholder="Ingrese su nombre" v>
+            </mat-form-field>
+      
+            <mat-form-field class="example-full-width bloque">
+                  <mat-label>Apellido: </mat-label>
+                  <input type="text" formControlName="apellido" matInput placeholder="Ingrese su apellido" v>
+            </mat-form-field>
+      
+            <mat-form-field class="example-full-width bloque">
+                  <mat-label>correo: </mat-label>
+                  <input type="text" formControlName="correo" matInput placeholder="Ingrese su Correo" v>
+                  @if (registro.get('correo')?.hasError('required') && registro.get('correo')?.touched) {
+                        <mat-error>
+                            El correo es requerido.
+                        </mat-error>
+                    } @else if (registro.get('correo')?.hasError('email') && registro.get('correo')?.touched) {
+                        <mat-error>
+                            Formato de correo invalido.
+                        </mat-error>
+                    }
+            </mat-form-field>
+      
+            <mat-form-field class="example-full-width bloque">
+                  <mat-label>Contraseña</mat-label>
+                  <input type="password" formControlName="contraseña" matInput placeholder="Ingrese su Contraseña" v>
+            </mat-form-field>
+
+            <button type="submit" mat-flat-button class="boton">registrarse</button>
+        </form>
+        
+</div>

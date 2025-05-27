@@ -1,6 +1,6 @@
 <div class="login">
     <form class="formulario" [formGroup]=login (ngSubmit)="validar()">
-        <img src="/assets/image/logo-login.png" alt="" width="250px" height="250px">
+        <img src="assets/image/logo-login.png" alt="" width="250px" height="250px">
         <mat-form-field class="ancho">
             <mat-label>Correo</mat-label>
             <input type="email" matInput formControlName="correo">
@@ -19,7 +19,7 @@
             <input type="password" class="ancho" matInput formControlName="password">
         </mat-form-field>
         <button mat-flat-button class="ancho" [disabled]="login.invalid" type="submit" >Login up</button>
-        <button mat-flat-button class="ancho" type="button">Sign up?</button>   
+        <button mat-flat-button class="ancho" routerLink="/registrarse" type="button">Sign up?</button>   
     </form>
     
 </div>
